@@ -1,0 +1,21 @@
+{
+  "name": "accountinfo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "npm start",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "nodemon": "./node_modules/nodemon/bin/nodemon.js --exec npm run dev"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ajax-request": "^1.2.3",
+    "ejs": "^2.5.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}

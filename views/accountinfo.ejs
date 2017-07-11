@@ -1,0 +1,54 @@
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<style>
+    body {
+        overflow: hidden;
+    }
+    .container{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .table{
+        text-align: center;
+    }
+    .account-statement{
+        height: 80vh;
+        overflow-y: scroll;
+        padding-bottom: 50px;
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <h1 class="text-center">Account Info</h1>
+        <div>
+            <table class="table table-striped">
+                <tbody>
+                <tr>
+                    <td>Account Name:</td>
+                    <td><%= accountInfo.account.name %></td>
+                </tr>
+                <tr>
+                    <td>IBAN:</td>
+                    <td><%= accountInfo.account.iban %></td>
+                </tr>
+                <tr>
+                    <td>Balance:</td>
+                    <td><%= accountInfo.account.balance %></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="account-statement">
+            <ul class="list-group">
+                <% accountInfo.debitsAndCredits.forEach(function(transaction){ %>
+                    <li class="list-group-item">
+                        <div><%= transaction.from %><%= transaction.to %></div>
+                        <div><%= transaction.description %></div>
+                        <div>Amount: <%= transaction.amount %><%= transaction.debit %></div>
+                        <div>Date: <%= transaction.date %></div>
+                    </li>
+                <% }); %>
+            </ul>
+        </div>
+    </div>
+</div>
